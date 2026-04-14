@@ -38,6 +38,16 @@ using ModeloTransporta.src.Modules.DocumentCustomer.Infrastructure.Entity;
 using ModeloTransporta.src.Modules.RelationType.Infrastructure.Entity;
 using ModeloTransporta.src.Modules.AssignmentRole.Infrastructure.Entity;
 using ModeloTransporta.src.Modules.Entity1.Infrastructure.Entity;
+using ModeloTransporta.src.Modules.TransportCompany.Infrastructure.Entity;
+using ModeloTransporta.src.Modules.CompanyStatus.Infrastructure.Entity;
+using ModeloTransporta.src.Modules.CompanyDocument.Infrastructure.Entity;
+using ModeloTransporta.src.Modules.Plan.Infrastructure.Entity;
+using ModeloTransporta.src.Modules.Subscription.Infrastructure.Entity;
+using ModeloTransporta.src.Modules.CreditWallet.Infrastructure.Entity;
+using ModeloTransporta.src.Modules.Payment.Infrastructure.Entity;
+using ModeloTransporta.src.Modules.PriceHistory.Infrastructure.Entity;
+using ModeloTransporta.src.Modules.ChatRoom.Infrastructure.Entity;
+using ModeloTransporta.src.Modules.ChatMessage.Infrastructure.Entity;   
 
 namespace ModeloTransporta.src.Shared;
 
@@ -83,6 +93,16 @@ public class AppDbContext : DbContext
     public DbSet<RelationTypeEntity> RelationTypes => Set<RelationTypeEntity>();
     public DbSet<AssignmentRoleEntity> AssignmentRoles => Set<AssignmentRoleEntity>();
     public DbSet<Entity1Entity> Entity1s => Set<Entity1Entity>();
+    public DbSet<TransportCompanyEntity> TransportCompanies => Set<TransportCompanyEntity>();
+    public DbSet<CompanyStatusEntity> CompanyStatuses => Set<CompanyStatusEntity>();
+    public DbSet<CompanyDocumentEntity> CompanyDocuments => Set<CompanyDocumentEntity>();
+    public DbSet<PlanEntity> Plans => Set<PlanEntity>();
+    public DbSet<SubscriptionEntity> Subscriptions => Set<SubscriptionEntity>();
+    public DbSet<CreditWalletEntity> CreditWallets => Set<CreditWalletEntity>();
+    public DbSet<PaymentEntity> Payments => Set<PaymentEntity>();
+    public DbSet<ChatRoomEntity> ChatRooms => Set<ChatRoomEntity>();
+    public DbSet<PriceHistoryEntity> PriceHistories => Set<PriceHistoryEntity>();
+    public DbSet<ChatMessageEntity> ChatMessages => Set<ChatMessageEntity>();
 
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -126,7 +146,16 @@ public class AppDbContext : DbContext
         modelBuilder.ApplyConfiguration(new RelationTypeEntityConfiguration());
         modelBuilder.ApplyConfiguration(new AssignmentRoleEntityConfiguration());
         modelBuilder.ApplyConfiguration(new Entity1EntityConfiguration());
-
+        modelBuilder.ApplyConfiguration(new TransportCompanyEntityConfiguration());
+        modelBuilder.ApplyConfiguration(new CompanyStatusEntityConfiguration());     
+        modelBuilder.ApplyConfiguration(new CompanyDocumentEntityConfiguration());
+        modelBuilder.ApplyConfiguration(new PlanEntityConfiguration());
+        modelBuilder.ApplyConfiguration(new SubscriptionEntityConfiguration());
+        modelBuilder.ApplyConfiguration(new CreditWalletEntityConfiguration());
+        modelBuilder.ApplyConfiguration(new PaymentEntityConfiguration());
+        modelBuilder.ApplyConfiguration(new PriceHistoryEntityConfiguration());
+        modelBuilder.ApplyConfiguration(new ChatRoomEntityConfiguration());
+        modelBuilder.ApplyConfiguration(new ChatMessageEntityConfiguration());
 
         base.OnModelCreating(modelBuilder);
     }

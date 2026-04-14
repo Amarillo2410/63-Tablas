@@ -1,0 +1,11 @@
+C:\Users\amari\OneDrive\Documents\C#\63_tablas\ModeloTransporta\bin\Release\net10.0\publish\ModeloTransporta.exe
+C:\Users\amari\OneDrive\Documents\C#\63_tablas\ModeloTransporta\bin\Release\net10.0\publish\appsettings.json
+C:\Users\amari\OneDrive\Documents\C#\63_tablas\ModeloTransporta\bin\Release\net10.0\publish\ModeloTransporta.dll
+C:\Users\amari\OneDrive\Documents\C#\63_tablas\ModeloTransporta\bin\Release\net10.0\publish\ModeloTransporta.runtimeconfig.json
+C:\Users\amari\OneDrive\Documents\C#\63_tablas\ModeloTransporta\bin\Release\net10.0\publish\ModeloTransporta.pdb
+C:\Users\amari\OneDrive\Documents\C#\63_tablas\ModeloTransporta\bin\Release\net10.0\publish\Microsoft.EntityFrameworkCore.dll
+C:\Users\amari\OneDrive\Documents\C#\63_tablas\ModeloTransporta\bin\Release\net10.0\publish\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\amari\OneDrive\Documents\C#\63_tablas\ModeloTransporta\bin\Release\net10.0\publish\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\amari\OneDrive\Documents\C#\63_tablas\ModeloTransporta\bin\Release\net10.0\publish\MySqlConnector.dll
+C:\Users\amari\OneDrive\Documents\C#\63_tablas\ModeloTransporta\bin\Release\net10.0\publish\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\amari\OneDrive\Documents\C#\63_tablas\ModeloTransporta\bin\Release\net10.0\publish\ModeloTransporta.deps.json

@@ -156,6 +156,59 @@ namespace ModeloTransporta.Migrations
                     b.ToTable("bids", (string)null);
                 });
 
+            modelBuilder.Entity("ModeloTransporta.src.Modules.ChatMessage.Infrastructure.Entity.ChatMessageEntity", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<string>("messageText")
+                        .IsRequired()
+                        .HasColumnType("varchar(1000)")
+                        .HasColumnName("message_text");
+
+                    b.Property<int>("roomId")
+                        .HasColumnType("int")
+                        .HasColumnName("room_id");
+
+                    b.Property<int>("senderId")
+                        .HasColumnType("int")
+                        .HasColumnName("sender_id");
+
+                    b.Property<DateTime>("sentAt")
+                        .HasColumnType("datetime")
+                        .HasColumnName("sent_at");
+
+                    b.HasKey("id");
+
+                    b.ToTable("chat_messages", (string)null);
+                });
+
+            modelBuilder.Entity("ModeloTransporta.src.Modules.ChatRoom.Infrastructure.Entity.ChatRoomEntity", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<DateTime>("createdAt")
+                        .HasColumnType("datetime")
+                        .HasColumnName("created_at");
+
+                    b.Property<int>("tripId")
+                        .HasColumnType("int")
+                        .HasColumnName("trip_id");
+
+                    b.HasKey("id");
+
+                    b.ToTable("chat_rooms", (string)null);
+                });
+
             modelBuilder.Entity("ModeloTransporta.src.Modules.City.Infrastructure.Entity.CityEntity", b =>
                 {
                     b.Property<int>("id")
@@ -182,6 +235,56 @@ namespace ModeloTransporta.Migrations
                     b.HasKey("id");
 
                     b.ToTable("cities", (string)null);
+                });
+
+            modelBuilder.Entity("ModeloTransporta.src.Modules.CompanyDocument.Infrastructure.Entity.CompanyDocumentEntity", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<int>("companyId")
+                        .HasColumnType("int")
+                        .HasColumnName("company_id");
+
+                    b.Property<DateTime>("expiryDate")
+                        .HasColumnType("datetime")
+                        .HasColumnName("expiry_date");
+
+                    b.Property<string>("fileUrl")
+                        .IsRequired()
+                        .HasColumnType("varchar(500)")
+                        .HasColumnName("file_url");
+
+                    b.Property<int>("typeDocumentId")
+                        .HasColumnType("int")
+                        .HasColumnName("type_document_id");
+
+                    b.HasKey("id");
+
+                    b.ToTable("company_documents", (string)null);
+                });
+
+            modelBuilder.Entity("ModeloTransporta.src.Modules.CompanyStatus.Infrastructure.Entity.CompanyStatusEntity", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("varchar(100)")
+                        .HasColumnName("name");
+
+                    b.HasKey("id");
+
+                    b.ToTable("companies_status", (string)null);
                 });
 
             modelBuilder.Entity("ModeloTransporta.src.Modules.CompanyVehicle.Infrastructure.Entity.CompanyVehicleEntity", b =>
@@ -237,6 +340,36 @@ namespace ModeloTransporta.Migrations
                     b.HasKey("id");
 
                     b.ToTable("countries", (string)null);
+                });
+
+            modelBuilder.Entity("ModeloTransporta.src.Modules.CreditWallet.Infrastructure.Entity.CreditWalletEntity", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<decimal>("balance")
+                        .HasColumnType("decimal(10,2)")
+                        .HasColumnName("balance");
+
+                    b.Property<int?>("companyId")
+                        .HasColumnType("int")
+                        .HasColumnName("company_id");
+
+                    b.Property<DateTime>("lastUpdate")
+                        .HasColumnType("datetime")
+                        .HasColumnName("last_update");
+
+                    b.Property<int?>("personId")
+                        .HasColumnType("int")
+                        .HasColumnName("person_id");
+
+                    b.HasKey("id");
+
+                    b.ToTable("credit_wallet", (string)null);
                 });
 
             modelBuilder.Entity("ModeloTransporta.src.Modules.Customer.Infrastructure.Entity.CustomerEntity", b =>
@@ -637,6 +770,41 @@ namespace ModeloTransporta.Migrations
                     b.ToTable("load_status_history", (string)null);
                 });
 
+            modelBuilder.Entity("ModeloTransporta.src.Modules.Payment.Infrastructure.Entity.PaymentEntity", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<decimal>("amount")
+                        .HasColumnType("decimal(10,2)")
+                        .HasColumnName("amount");
+
+                    b.Property<DateTime>("date")
+                        .HasColumnType("datetime")
+                        .HasColumnName("date");
+
+                    b.Property<int>("providerId")
+                        .HasColumnType("int")
+                        .HasColumnName("provider_id");
+
+                    b.Property<int>("statusId")
+                        .HasColumnType("int")
+                        .HasColumnName("status_id");
+
+                    b.Property<string>("transactionReference")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)")
+                        .HasColumnName("transaction_reference");
+
+                    b.HasKey("id");
+
+                    b.ToTable("payments", (string)null);
+                });
+
             modelBuilder.Entity("ModeloTransporta.src.Modules.Person.Infrastructure.Entity.PersonEntity", b =>
                 {
                     b.Property<int>("id")
@@ -759,6 +927,59 @@ namespace ModeloTransporta.Migrations
                     b.HasKey("id");
 
                     b.ToTable("person_transport", (string)null);
+                });
+
+            modelBuilder.Entity("ModeloTransporta.src.Modules.Plan.Infrastructure.Entity.PlanEntity", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<int>("durationDays")
+                        .HasColumnType("int")
+                        .HasColumnName("duration_days");
+
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("varchar(100)")
+                        .HasColumnName("name");
+
+                    b.Property<decimal>("price")
+                        .HasColumnType("decimal(10,2)")
+                        .HasColumnName("price");
+
+                    b.HasKey("id");
+
+                    b.ToTable("plans", (string)null);
+                });
+
+            modelBuilder.Entity("ModeloTransporta.src.Modules.PriceHistory.Infrastructure.Entity.PriceHistoryEntity", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<DateTime>("changeDate")
+                        .HasColumnType("datetime")
+                        .HasColumnName("change_date");
+
+                    b.Property<decimal>("newPrice")
+                        .HasColumnType("decimal(10,2)")
+                        .HasColumnName("new_price");
+
+                    b.Property<decimal>("oldPrice")
+                        .HasColumnType("decimal(10,2)")
+                        .HasColumnName("old_price");
+
+                    b.HasKey("id");
+
+                    b.ToTable("price_history", (string)null);
                 });
 
             modelBuilder.Entity("ModeloTransporta.src.Modules.Rating.Infrastructure.Entity.RatingEntity", b =>
@@ -918,6 +1139,78 @@ namespace ModeloTransporta.Migrations
                     b.HasKey("id");
 
                     b.ToTable("status_bids", (string)null);
+                });
+
+            modelBuilder.Entity("ModeloTransporta.src.Modules.Subscription.Infrastructure.Entity.SubscriptionEntity", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<DateTime>("endDate")
+                        .HasColumnType("datetime")
+                        .HasColumnName("end_date");
+
+                    b.Property<int>("planId")
+                        .HasColumnType("int")
+                        .HasColumnName("plan_id");
+
+                    b.Property<DateTime>("startDate")
+                        .HasColumnType("datetime")
+                        .HasColumnName("start_date");
+
+                    b.Property<int>("statusId")
+                        .HasColumnType("int")
+                        .HasColumnName("status_id");
+
+                    b.Property<int>("subscriberId")
+                        .HasColumnType("int")
+                        .HasColumnName("subscriber_id");
+
+                    b.HasKey("id");
+
+                    b.ToTable("subscriptions", (string)null);
+                });
+
+            modelBuilder.Entity("ModeloTransporta.src.Modules.TransportCompany.Infrastructure.Entity.TransportCompanyEntity", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<string>("address")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)")
+                        .HasColumnName("address");
+
+                    b.Property<int>("cityId")
+                        .HasColumnType("int")
+                        .HasColumnName("city_id");
+
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("varchar(150)")
+                        .HasColumnName("name");
+
+                    b.Property<string>("phone")
+                        .IsRequired()
+                        .HasColumnType("varchar(20)")
+                        .HasColumnName("phone");
+
+                    b.Property<string>("taxId")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)")
+                        .HasColumnName("tax_id");
+
+                    b.HasKey("id");
+
+                    b.ToTable("transport_companies", (string)null);
                 });
 
             modelBuilder.Entity("ModeloTransporta.src.Modules.TravelScale.Infrastructure.Entity.TravelScaleEntity", b =>
