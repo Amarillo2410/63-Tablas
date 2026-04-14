@@ -1,0 +1,165 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="src\Modules\" />
+    <Folder Include="src\Modules\Bid\" />
+    <Folder Include="src\Modules\Bid\application\" />
+    <Folder Include="src\Modules\Bid\Domain\" />
+    <Folder Include="src\Modules\Bid\Infrastructure\" />
+    <Folder Include="src\Modules\Bid\Infrastructure\Entity\" />
+    <Folder Include="src\Modules\Bid\Infrastructure\Repositore\" />
+    <Folder Include="src\Modules\City\" />
+    <Folder Include="src\Modules\City\application\" />
+    <Folder Include="src\Modules\City\Domain\" />
+    <Folder Include="src\Modules\City\Infrastructure\" />
+    <Folder Include="src\Modules\City\Infrastructure\Entity\" />
+    <Folder Include="src\Modules\City\Infrastructure\Repositories\" />
+    <Folder Include="src\Modules\CompanyVehicle\" />
+    <Folder Include="src\Modules\CompanyVehicle\Application\" />
+    <Folder Include="src\Modules\CompanyVehicle\Domain\" />
+    <Folder Include="src\Modules\CompanyVehicle\Infrastructure\" />
+    <Folder Include="src\Modules\CompanyVehicle\Infrastructure\Entity\" />
+    <Folder Include="src\Modules\CompanyVehicle\Infrastructure\Repositories\" />
+    <Folder Include="src\Modules\CompanyVehicle\VehicleStatus\" />
+    <Folder Include="src\Modules\Country\" />
+    <Folder Include="src\Modules\Country\application\" />
+    <Folder Include="src\Modules\Country\Domain\" />
+    <Folder Include="src\Modules\Country\Infrastructure\" />
+    <Folder Include="src\Modules\Country\Infrastructure\Entity\" />
+    <Folder Include="src\Modules\Country\Infrastructure\Repositorie\" />
+    <Folder Include="src\Modules\DocumentVehicle\" />
+    <Folder Include="src\Modules\DocumentVehicle\application\" />
+    <Folder Include="src\Modules\DocumentVehicle\Domain\" />
+    <Folder Include="src\Modules\DocumentVehicle\Infrastructure\" />
+    <Folder Include="src\Modules\DocumentVehicle\Infrastructure\Entity\" />
+    <Folder Include="src\Modules\DocumentVehicle\Infrastructure\Repositories\" />
+    <Folder Include="src\Modules\DriverVehicle\" />
+    <Folder Include="src\Modules\DriverVehicle\application\" />
+    <Folder Include="src\Modules\DriverVehicle\Domain\" />
+    <Folder Include="src\Modules\DriverVehicle\Infrastructure\" />
+    <Folder Include="src\Modules\DriverVehicle\Infrastructure\Entity\" />
+    <Folder Include="src\Modules\DriverVehicle\Infrastructure\repositorires\" />
+    <Folder Include="src\Modules\LoadDetail\" />
+    <Folder Include="src\Modules\LoadDetail\application\" />
+    <Folder Include="src\Modules\LoadDetail\Domain\" />
+    <Folder Include="src\Modules\LoadDetail\Infrastructure\" />
+    <Folder Include="src\Modules\LoadDetail\Infrastructure\Entity\" />
+    <Folder Include="src\Modules\LoadDetail\Infrastructure\Repositories\" />
+    <Folder Include="src\Modules\LoadImage\" />
+    <Folder Include="src\Modules\LoadImage\application\" />
+    <Folder Include="src\Modules\LoadImage\Domain\" />
+    <Folder Include="src\Modules\LoadImage\Infrastructure\" />
+    <Folder Include="src\Modules\LoadImage\Infrastructure\Entity\" />
+    <Folder Include="src\Modules\LoadImage\Infrastructure\Repositories\" />
+    <Folder Include="src\Modules\LoadStatusHistory\" />
+    <Folder Include="src\Modules\LoadStatusHistory\application\" />
+    <Folder Include="src\Modules\LoadStatusHistory\Domain\" />
+    <Folder Include="src\Modules\LoadStatusHistory\Infrastructure\" />
+    <Folder Include="src\Modules\LoadStatusHistory\Infrastructure\Entity\" />
+    <Folder Include="src\Modules\LoadStatusHistory\Infrastructure\Repositories\" />
+    <Folder Include="src\Modules\Load\" />
+    <Folder Include="src\Modules\Load\application\" />
+    <Folder Include="src\Modules\Load\Domain\" />
+    <Folder Include="src\Modules\Load\Infrastructure\" />
+    <Folder Include="src\Modules\Load\Infrastructure\Entity\" />
+    <Folder Include="src\Modules\Load\Infrastructure\Repositories\" />
+    <Folder Include="src\Modules\PersonTransport\" />
+    <Folder Include="src\Modules\PersonTransport\application\" />
+    <Folder Include="src\Modules\PersonTransport\Domain\" />
+    <Folder Include="src\Modules\PersonTransport\Infrastructure\" />
+    <Folder Include="src\Modules\PersonTransport\Infrastructure\Entity\" />
+    <Folder Include="src\Modules\PersonTransport\Infrastructure\Repositories\" />
+    <Folder Include="src\Modules\Rating\" />
+    <Folder Include="src\Modules\Rating\application\" />
+    <Folder Include="src\Modules\Rating\Domain\" />
+    <Folder Include="src\Modules\Rating\Infrastructure\" />
+    <Folder Include="src\Modules\Rating\Infrastructure\Entity\" />
+    <Folder Include="src\Modules\Rating\Infrastructure\Repositories\" />
+    <Folder Include="src\Modules\ReturnLoadSuggestion\" />
+    <Folder Include="src\Modules\ReturnLoadSuggestion\appplication\" />
+    <Folder Include="src\Modules\ReturnLoadSuggestion\Domain\" />
+    <Folder Include="src\Modules\ReturnLoadSuggestion\Infrastructure\" />
+    <Folder Include="src\Modules\ReturnLoadSuggestion\Infrastructure\Entity\" />
+    <Folder Include="src\Modules\ReturnLoadSuggestion\Infrastructure\Repositories\" />
+    <Folder Include="src\Modules\StateRegion\" />
+    <Folder Include="src\Modules\StateRegion\application\" />
+    <Folder Include="src\Modules\StateRegion\Domain\" />
+    <Folder Include="src\Modules\StateRegion\Infrastructure\" />
+    <Folder Include="src\Modules\StateRegion\Infrastructure\Entity\" />
+    <Folder Include="src\Modules\StateRegion\Infrastructure\References\" />
+    <Folder Include="src\Modules\StatusBid\" />
+    <Folder Include="src\Modules\StatusBid\application\" />
+    <Folder Include="src\Modules\StatusBid\Domain\" />
+    <Folder Include="src\Modules\StatusBid\Infrastructure\" />
+    <Folder Include="src\Modules\StatusBid\Infrastructure\Entity\" />
+    <Folder Include="src\Modules\StatusBid\Infrastructure\Repositories\" />
+    <Folder Include="src\Modules\TravelScale\" />
+    <Folder Include="src\Modules\TravelScale\application}\" />
+    <Folder Include="src\Modules\TravelScale\Domain\" />
+    <Folder Include="src\Modules\TravelScale\Infrastructure\" />
+    <Folder Include="src\Modules\TravelScale\Infrastructure\Entity\" />
+    <Folder Include="src\Modules\TravelScale\Infrastructure\Repositories\" />
+    <Folder Include="src\Modules\TripAssignment\" />
+    <Folder Include="src\Modules\TripAssignment\application\" />
+    <Folder Include="src\Modules\TripAssignment\Domain\" />
+    <Folder Include="src\Modules\TripAssignment\Infrastructure\" />
+    <Folder Include="src\Modules\TripAssignment\Infrastructure\Entity\" />
+    <Folder Include="src\Modules\TripAssignment\Infrastructure\Repositories\" />
+    <Folder Include="src\Modules\TripStatusHistory\" />
+    <Folder Include="src\Modules\TripStatusHistory\application\" />
+    <Folder Include="src\Modules\TripStatusHistory\Domain\" />
+    <Folder Include="src\Modules\TripStatusHistory\Infrastructure\" />
+    <Folder Include="src\Modules\TripStatusHistory\Infrastructure\Entity\" />
+    <Folder Include="src\Modules\TripStatusHistory\Infrastructure\Repositories\" />
+    <Folder Include="src\Modules\Trip\" />
+    <Folder Include="src\Modules\Trip\appplikcation\" />
+    <Folder Include="src\Modules\Trip\Domain\" />
+    <Folder Include="src\Modules\Trip\Infrastructure\" />
+    <Folder Include="src\Modules\Trip\Infrastructure\Entity\" />
+    <Folder Include="src\Modules\Trip\Infrastructure\Repositories\" />
+    <Folder Include="src\Modules\TypeLoad\" />
+    <Folder Include="src\Modules\TypeLoad\application\" />
+    <Folder Include="src\Modules\TypeLoad\Domain\" />
+    <Folder Include="src\Modules\TypeLoad\Infrastructure\" />
+    <Folder Include="src\Modules\TypeLoad\Infrastructure\Entity\" />
+    <Folder Include="src\Modules\TypeLoad\Infrastructure\Repositories\" />
+    <Folder Include="src\Modules\TypeVehicle\" />
+    <Folder Include="src\Modules\TypeVehicle\Application\" />
+    <Folder Include="src\Modules\TypeVehicle\Domain\" />
+    <Folder Include="src\Modules\TypeVehicle\Infrastructure\" />
+    <Folder Include="src\Modules\TypeVehicle\Infrastructure\Entity\" />
+    <Folder Include="src\Modules\TypeVehicle\Infrastructure\Repositories\" />
+    <Folder Include="src\Modules\VehicleStatus\" />
+    <Folder Include="src\Modules\VehicleStatus\Application\" />
+    <Folder Include="src\Modules\VehicleStatus\Domain\" />
+    <Folder Include="src\Modules\VehicleStatus\Infrastructure\" />
+    <Folder Include="src\Modules\VehicleStatus\Infrastructure\Entity\" />
+    <Folder Include="src\Modules\VehicleStatus\Infrastructure\Repositories\" />
+    <Folder Include="src\Modules\Vehicle\" />
+    <Folder Include="src\Modules\Vehicle\application\" />
+    <Folder Include="src\Modules\Vehicle\Domain\" />
+    <Folder Include="src\Modules\Vehicle\Infrastructure\" />
+    <Folder Include="src\Modules\Vehicle\Infrastructure\Entity\" />
+    <Folder Include="src\Modules\Vehicle\Infrastructure\Repositories\" />
+    <Folder Include="src\Shared\helpers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="10.0.5" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="10.0.5" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="10.0.5" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="9.0.0" />
+  </ItemGroup>
+
+</Project>
