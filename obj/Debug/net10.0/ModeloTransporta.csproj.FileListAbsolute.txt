@@ -115,3 +115,4 @@ C:\Users\amari\OneDrive\Documents\C#\63_tablas\ModeloTransporta\obj\Debug\net10.
 C:\Users\amari\OneDrive\Documents\C#\63_tablas\ModeloTransporta\obj\Debug\net10.0\staticwebassets.development.json
 C:\Users\amari\OneDrive\Documents\C#\63_tablas\ModeloTransporta\obj\Debug\net10.0\staticwebassets.build.endpoints.json
 C:\Users\amari\OneDrive\Documents\C#\63_tablas\ModeloTransporta\obj\Debug\net10.0\swae.build.ex.cache
+C:\Users\amari\OneDrive\Documents\C#\63_tablas\ModeloTransporta\obj\Debug\net10.0\ModeloTransporta.sourcelink.json

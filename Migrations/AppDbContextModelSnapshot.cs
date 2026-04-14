@@ -22,6 +22,102 @@ namespace ModeloTransporta.Migrations
 
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
 
+            modelBuilder.Entity("ModeloTransporta.src.Modules.AssignmentRole.Infrastructure.Entity.AssignmentRoleEntity", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("varchar(100)")
+                        .HasColumnName("name");
+
+                    b.HasKey("id");
+
+                    b.ToTable("assignment_role", (string)null);
+                });
+
+            modelBuilder.Entity("ModeloTransporta.src.Modules.AuthCredential.Infrastructure.Entity.AuthCredentialEntity", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<bool>("isActive")
+                        .HasColumnType("tinyint(1)")
+                        .HasColumnName("is_active");
+
+                    b.Property<DateTime>("lastLogin")
+                        .HasColumnType("datetime")
+                        .HasColumnName("last_login");
+
+                    b.Property<string>("passwordHash")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)")
+                        .HasColumnName("password_hash");
+
+                    b.Property<int>("personId")
+                        .HasColumnType("int")
+                        .HasColumnName("person_id");
+
+                    b.Property<string>("username")
+                        .IsRequired()
+                        .HasColumnType("varchar(100)")
+                        .HasColumnName("username");
+
+                    b.HasKey("id");
+
+                    b.ToTable("auth_credentials", (string)null);
+                });
+
+            modelBuilder.Entity("ModeloTransporta.src.Modules.AuthSession.Infrastructure.Entity.AuthSessionEntity", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<int>("authId")
+                        .HasColumnType("int")
+                        .HasColumnName("auth_id");
+
+                    b.Property<DateTime>("createdAt")
+                        .HasColumnType("datetime")
+                        .HasColumnName("created_at");
+
+                    b.Property<string>("deviceInfo")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)")
+                        .HasColumnName("device_info");
+
+                    b.Property<DateTime>("expiresAt")
+                        .HasColumnType("datetime")
+                        .HasColumnName("expires_at");
+
+                    b.Property<string>("ipAddress")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)")
+                        .HasColumnName("ip_address");
+
+                    b.Property<string>("token")
+                        .IsRequired()
+                        .HasColumnType("varchar(500)")
+                        .HasColumnName("token");
+
+                    b.HasKey("id");
+
+                    b.ToTable("auth_sessions", (string)null);
+                });
+
             modelBuilder.Entity("ModeloTransporta.src.Modules.Bid.Infrastructure.Entity.BidEntity", b =>
                 {
                     b.Property<int>("id")
@@ -143,6 +239,137 @@ namespace ModeloTransporta.Migrations
                     b.ToTable("countries", (string)null);
                 });
 
+            modelBuilder.Entity("ModeloTransporta.src.Modules.Customer.Infrastructure.Entity.CustomerEntity", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<string>("companyName")
+                        .IsRequired()
+                        .HasColumnType("varchar(150)")
+                        .HasColumnName("company_name");
+
+                    b.Property<bool>("isFrequent")
+                        .HasColumnType("tinyint(1)")
+                        .HasColumnName("is_frequent");
+
+                    b.Property<int>("personId")
+                        .HasColumnType("int")
+                        .HasColumnName("person_id");
+
+                    b.HasKey("id");
+
+                    b.ToTable("customers", (string)null);
+                });
+
+            modelBuilder.Entity("ModeloTransporta.src.Modules.DocumentCategory.Infrastructure.Entity.DocumentCategoryEntity", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("varchar(100)")
+                        .HasColumnName("name");
+
+                    b.HasKey("id");
+
+                    b.ToTable("document_category", (string)null);
+                });
+
+            modelBuilder.Entity("ModeloTransporta.src.Modules.DocumentCustomer.Infrastructure.Entity.DocumentCustomerEntity", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<int>("customerId")
+                        .HasColumnType("int")
+                        .HasColumnName("customer_id");
+
+                    b.Property<string>("documentNumber")
+                        .IsRequired()
+                        .HasColumnType("varchar(100)")
+                        .HasColumnName("document_number");
+
+                    b.Property<int>("statusId")
+                        .HasColumnType("int")
+                        .HasColumnName("status_id");
+
+                    b.Property<int>("typeDocumentId")
+                        .HasColumnType("int")
+                        .HasColumnName("type_document_id");
+
+                    b.HasKey("id");
+
+                    b.ToTable("documents_customers", (string)null);
+                });
+
+            modelBuilder.Entity("ModeloTransporta.src.Modules.DocumentDriver.Infrastructure.Entity.DocumentDriverEntity", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<string>("documentNumber")
+                        .IsRequired()
+                        .HasColumnType("varchar(100)")
+                        .HasColumnName("document_number");
+
+                    b.Property<int>("driverId")
+                        .HasColumnType("int")
+                        .HasColumnName("driver_id");
+
+                    b.Property<DateTime>("expiryDate")
+                        .HasColumnType("datetime")
+                        .HasColumnName("expiry_date");
+
+                    b.Property<int>("statusId")
+                        .HasColumnType("int")
+                        .HasColumnName("status_id");
+
+                    b.Property<int>("typeDocumentId")
+                        .HasColumnType("int")
+                        .HasColumnName("type_document_id");
+
+                    b.HasKey("id");
+
+                    b.ToTable("documents_drivers", (string)null);
+                });
+
+            modelBuilder.Entity("ModeloTransporta.src.Modules.DocumentStatus.Infrastructure.Entity.DocumentStatusEntity", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("varchar(100)")
+                        .HasColumnName("name");
+
+                    b.HasKey("id");
+
+                    b.ToTable("documents_status", (string)null);
+                });
+
             modelBuilder.Entity("ModeloTransporta.src.Modules.DocumentVehicle.Infrastructure.Entity.DocumentVehicleEntity", b =>
                 {
                     b.Property<int>("id")
@@ -179,6 +406,38 @@ namespace ModeloTransporta.Migrations
                     b.ToTable("documents_vehicles", (string)null);
                 });
 
+            modelBuilder.Entity("ModeloTransporta.src.Modules.Driver.Infrastructure.Entity.DriverEntity", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<int>("experienceYears")
+                        .HasColumnType("int")
+                        .HasColumnName("experience_years");
+
+                    b.Property<string>("licenseCategory")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)")
+                        .HasColumnName("license_category");
+
+                    b.Property<string>("licenseNumber")
+                        .IsRequired()
+                        .HasColumnType("varchar(100)")
+                        .HasColumnName("license_number");
+
+                    b.Property<int>("personId")
+                        .HasColumnType("int")
+                        .HasColumnName("person_id");
+
+                    b.HasKey("id");
+
+                    b.ToTable("drivers", (string)null);
+                });
+
             modelBuilder.Entity("ModeloTransporta.src.Modules.DriverVehicle.Infrastructure.Entity.DriverVehicleEntity", b =>
                 {
                     b.Property<int>("id")
@@ -207,6 +466,30 @@ namespace ModeloTransporta.Migrations
                     b.HasKey("id");
 
                     b.ToTable("drivers_vehicles", (string)null);
+                });
+
+            modelBuilder.Entity("ModeloTransporta.src.Modules.Entity1.Infrastructure.Entity.Entity1Entity", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<string>("data")
+                        .IsRequired()
+                        .HasColumnType("varchar(500)")
+                        .HasColumnName("data");
+
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("varchar(100)")
+                        .HasColumnName("name");
+
+                    b.HasKey("id");
+
+                    b.ToTable("entity1", (string)null);
                 });
 
             modelBuilder.Entity("ModeloTransporta.src.Modules.Load.Infrastructure.Entity.LoadEntity", b =>
@@ -354,6 +637,103 @@ namespace ModeloTransporta.Migrations
                     b.ToTable("load_status_history", (string)null);
                 });
 
+            modelBuilder.Entity("ModeloTransporta.src.Modules.Person.Infrastructure.Entity.PersonEntity", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<string>("address")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)")
+                        .HasColumnName("address");
+
+                    b.Property<int>("cityId")
+                        .HasColumnType("int")
+                        .HasColumnName("city_id");
+
+                    b.Property<string>("email")
+                        .IsRequired()
+                        .HasColumnType("varchar(150)")
+                        .HasColumnName("email");
+
+                    b.Property<string>("firstName")
+                        .IsRequired()
+                        .HasColumnType("varchar(100)")
+                        .HasColumnName("first_name");
+
+                    b.Property<string>("lastName")
+                        .IsRequired()
+                        .HasColumnType("varchar(100)")
+                        .HasColumnName("last_name");
+
+                    b.Property<string>("phone")
+                        .IsRequired()
+                        .HasColumnType("varchar(20)")
+                        .HasColumnName("phone");
+
+                    b.Property<int>("statusId")
+                        .HasColumnType("int")
+                        .HasColumnName("status_id");
+
+                    b.HasKey("id");
+
+                    b.ToTable("persons", (string)null);
+                });
+
+            modelBuilder.Entity("ModeloTransporta.src.Modules.PersonRole.Infrastructure.Entity.PersonRoleEntity", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<DateTime>("assignedAt")
+                        .HasColumnType("datetime")
+                        .HasColumnName("assigned_at");
+
+                    b.Property<int>("personId")
+                        .HasColumnType("int")
+                        .HasColumnName("person_id");
+
+                    b.Property<int>("roleId")
+                        .HasColumnType("int")
+                        .HasColumnName("role_id");
+
+                    b.HasKey("id");
+
+                    b.ToTable("person_roles", (string)null);
+                });
+
+            modelBuilder.Entity("ModeloTransporta.src.Modules.PersonStatus.Infrastructure.Entity.PersonStatusEntity", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<string>("description")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)")
+                        .HasColumnName("description");
+
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("varchar(100)")
+                        .HasColumnName("name");
+
+                    b.HasKey("id");
+
+                    b.ToTable("person_status", (string)null);
+                });
+
             modelBuilder.Entity("ModeloTransporta.src.Modules.PersonTransport.Infrastructure.Entity.PersonTransportEntity", b =>
                 {
                     b.Property<int>("id")
@@ -420,6 +800,30 @@ namespace ModeloTransporta.Migrations
                     b.ToTable("ratings", (string)null);
                 });
 
+            modelBuilder.Entity("ModeloTransporta.src.Modules.RelationType.Infrastructure.Entity.RelationTypeEntity", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<string>("description")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)")
+                        .HasColumnName("description");
+
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("varchar(100)")
+                        .HasColumnName("name");
+
+                    b.HasKey("id");
+
+                    b.ToTable("relation_type", (string)null);
+                });
+
             modelBuilder.Entity("ModeloTransporta.src.Modules.ReturnLoadSuggestion.Infrastructure.Entity.ReturnLoadSuggestionEntity", b =>
                 {
                     b.Property<int>("id")
@@ -448,6 +852,30 @@ namespace ModeloTransporta.Migrations
                     b.HasKey("id");
 
                     b.ToTable("return_load_suggestions", (string)null);
+                });
+
+            modelBuilder.Entity("ModeloTransporta.src.Modules.Role.Infrastructure.Entity.RoleEntity", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<string>("description")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)")
+                        .HasColumnName("description");
+
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("varchar(100)")
+                        .HasColumnName("name");
+
+                    b.HasKey("id");
+
+                    b.ToTable("roles", (string)null);
                 });
 
             modelBuilder.Entity("ModeloTransporta.src.Modules.StateRegion.Infrastructure.Entity.StateRegionEntity", b =>
@@ -625,6 +1053,29 @@ namespace ModeloTransporta.Migrations
                     b.HasKey("id");
 
                     b.ToTable("trip_status_history", (string)null);
+                });
+
+            modelBuilder.Entity("ModeloTransporta.src.Modules.TypeDocument.Infrastructure.Entity.TypeDocumentEntity", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<int>("categoryId")
+                        .HasColumnType("int")
+                        .HasColumnName("category_id");
+
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("varchar(100)")
+                        .HasColumnName("name");
+
+                    b.HasKey("id");
+
+                    b.ToTable("type_documents", (string)null);
                 });
 
             modelBuilder.Entity("ModeloTransporta.src.Modules.TypeLoad.Infrastructure.Entity.TypeLoadEntity", b =>

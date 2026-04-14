@@ -22,6 +22,22 @@ using ModeloTransporta.src.Modules.Rating.Infrastructure.Entity;
 using ModeloTransporta.src.Modules.Country.Infrastructure.Entity;
 using ModeloTransporta.src.Modules.StateRegion.Infrastructure.Entity;
 using ModeloTransporta.src.Modules.City.Infrastructure.Entity;
+using ModeloTransporta.src.Modules.Person.Infrastructure.Entity;
+using ModeloTransporta.src.Modules.Driver.Infrastructure.Entity;
+using ModeloTransporta.src.Modules.Customer.Infrastructure.Entity;
+using ModeloTransporta.src.Modules.PersonStatus.Infrastructure.Entity;
+using ModeloTransporta.src.Modules.Role.Infrastructure.Entity;
+using ModeloTransporta.src.Modules.PersonRole.Infrastructure.Entity;
+using ModeloTransporta.src.Modules.AuthCredential.Infrastructure.Entity;
+using ModeloTransporta.src.Modules.AuthSession.Infrastructure.Entity;
+using ModeloTransporta.src.Modules.DocumentCategory.Infrastructure.Entity;
+using ModeloTransporta.src.Modules.TypeDocument.Infrastructure.Entity;
+using ModeloTransporta.src.Modules.DocumentStatus.Infrastructure.Entity;
+using ModeloTransporta.src.Modules.DocumentDriver.Infrastructure.Entity;
+using ModeloTransporta.src.Modules.DocumentCustomer.Infrastructure.Entity;
+using ModeloTransporta.src.Modules.RelationType.Infrastructure.Entity;
+using ModeloTransporta.src.Modules.AssignmentRole.Infrastructure.Entity;
+using ModeloTransporta.src.Modules.Entity1.Infrastructure.Entity;
 
 namespace ModeloTransporta.src.Shared;
 
@@ -51,6 +67,23 @@ public class AppDbContext : DbContext
     public DbSet<CountryEntity> Countries => Set<CountryEntity>();
     public DbSet<StateRegionEntity> StateRegions => Set<StateRegionEntity>();
     public DbSet<CityEntity> Cities => Set<CityEntity>();
+    public DbSet<PersonEntity> Persons => Set<PersonEntity>();
+    public DbSet<DriverEntity> Drivers => Set<DriverEntity>();
+    public DbSet<CustomerEntity> Customers => Set<CustomerEntity>();
+    public DbSet<PersonStatusEntity> PersonStatuses => Set<PersonStatusEntity>();
+    public DbSet<RoleEntity> Roles => Set<RoleEntity>();
+    public DbSet<PersonRoleEntity> PersonRoles => Set<PersonRoleEntity>();
+    public DbSet<AuthCredentialEntity> AuthCredentials => Set<AuthCredentialEntity>();
+    public DbSet<AuthSessionEntity> AuthSessions => Set<AuthSessionEntity>();
+    public DbSet<DocumentCategoryEntity> DocumentCategories => Set<DocumentCategoryEntity>();
+    public DbSet<TypeDocumentEntity> TypeDocuments => Set<TypeDocumentEntity>();
+    public DbSet<DocumentStatusEntity> DocumentStatuses => Set<DocumentStatusEntity>();
+    public DbSet<DocumentDriverEntity> DocumentDrivers => Set<DocumentDriverEntity>();
+    public DbSet<DocumentCustomerEntity> DocumentCustomers => Set<DocumentCustomerEntity>();
+    public DbSet<RelationTypeEntity> RelationTypes => Set<RelationTypeEntity>();
+    public DbSet<AssignmentRoleEntity> AssignmentRoles => Set<AssignmentRoleEntity>();
+    public DbSet<Entity1Entity> Entity1s => Set<Entity1Entity>();
+
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -77,6 +110,24 @@ public class AppDbContext : DbContext
         modelBuilder.ApplyConfiguration(new CountryEntityConfiguration());
         modelBuilder.ApplyConfiguration(new StateRegionEntityConfiguration());
         modelBuilder.ApplyConfiguration(new CityEntityConfiguration());
+        modelBuilder.ApplyConfiguration(new PersonEntityConfiguration());
+        modelBuilder.ApplyConfiguration(new DriverEntityConfiguration());
+        modelBuilder.ApplyConfiguration(new CustomerEntityConfiguration());
+        modelBuilder.ApplyConfiguration(new PersonStatusEntityConfiguration());
+        modelBuilder.ApplyConfiguration(new RoleEntityConfiguration());
+        modelBuilder.ApplyConfiguration(new PersonRoleEntityConfiguration());
+        modelBuilder.ApplyConfiguration(new AuthCredentialEntityConfiguration());
+        modelBuilder.ApplyConfiguration(new AuthSessionEntityConfiguration());
+        modelBuilder.ApplyConfiguration(new DocumentCategoryEntityConfiguration());
+        modelBuilder.ApplyConfiguration(new TypeDocumentEntityConfiguration());
+        modelBuilder.ApplyConfiguration(new DocumentStatusEntityConfiguration());
+        modelBuilder.ApplyConfiguration(new DocumentDriverEntityConfiguration());
+        modelBuilder.ApplyConfiguration(new DocumentCustomerEntityConfiguration());
+        modelBuilder.ApplyConfiguration(new RelationTypeEntityConfiguration());
+        modelBuilder.ApplyConfiguration(new AssignmentRoleEntityConfiguration());
+        modelBuilder.ApplyConfiguration(new Entity1EntityConfiguration());
+
+
         base.OnModelCreating(modelBuilder);
     }
 }
